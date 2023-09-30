@@ -96,17 +96,17 @@ def main():
         endpoint = st.text_input('Enter the Endpoint', '')
         st.write('The current Endpoint is', endpoint)
 
-        # if st.button("Convert"):
-        #     if pdf_url:
-        #         # Call the conversion function and display the result
-        #         text = pdf_url_to_text(pdf_url)
-        #         if text:
-        #             st.subheader("Extracted Text:")
-        #             st.text(text)
-        #         else:
-        #             st.error("Unable to extract text from the PDF.")
-        #     else:
-        #         st.warning("Please enter a valid PDF URL.")
+        if st.button("Convert"):
+            if pdf_url:
+                # Call the conversion function and display the result
+                text = pdf_url_summary(pdf_url)
+                if text:
+                    st.subheader("Extracted Text:")
+                    st.text(text)
+                else:
+                    st.error("Unable to extract text from the PDF.")
+            else:
+                st.warning("Please enter a valid PDF URL.")
 
 if __name__ == "__main__":
     main()
