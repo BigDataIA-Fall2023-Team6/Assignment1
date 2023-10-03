@@ -60,7 +60,7 @@ def pdf_url_summary(pdf_url):
 
     except Exception as e:
         return f"An error occurred: {e}"
-<<<<<<< FeatureBranch_Vivek
+# <<<<<<< FeatureBranch_Vivek
     
 def pdf_url_summary_nougat(pdf_url):
     try:
@@ -91,10 +91,9 @@ def pdf_url_summary_nougat(pdf_url):
     except Exception as e:
         return f"An error occurred: {e}"
     
-=======
 
->>>>>>> streamlit
-# Streamlit app
+
+
 def main():
     st.title("PDF to Text Converter")
 
@@ -125,7 +124,7 @@ def main():
 
 
     if page =='Nougat':
-<<<<<<< FeatureBranch_Vivek
+# <<<<<<< FeatureBranch_Vivek
         st.subheader('Analyzing PDF using: Nougat')
 
         if st.button("Convert"):
@@ -142,7 +141,7 @@ def main():
                 st.warning("Please enter a valid PDF URL.")
 
 
-=======
+
         st.subheader('Analysing PDF using: Nougat')
         endpoint = st.text_input('Enter the Endpoint', '')
         st.write('The current Endpoint is', endpoint)
@@ -159,6 +158,6 @@ def main():
             else:
                 st.warning("Please enter a valid PDF URL.")
 
->>>>>>> streamlit
+
 if __name__ == "__main__":
     main()
