@@ -60,7 +60,40 @@ def pdf_url_summary(pdf_url):
 
     except Exception as e:
         return f"An error occurred: {e}"
+<<<<<<< FeatureBranch_Vivek
+    
+def pdf_url_summary_nougat(pdf_url):
+    try:
+        # Download the PDF file from the URL
+        response = requests.get(pdf_url)
+        response.raise_for_status()
 
+        # Create a file-like object from the response content
+        file_data = response.content
+
+        # Prepare the file for uploading
+        files = {'file': ('uploaded_file.pdf', file_data, 'application/pdf')}
+
+        # Replace with the ngrok URL provided by ngrok
+        ngrok_url = "https://e722-34-125-175-183.ngrok-free.app"  # Replace with your ngrok URL
+
+        # Send the POST request to the Nougat API via ngrok
+        response = requests.post(f'{ngrok_url}/predict/', files=files, timeout=500)
+
+        # Check if the request to the Nougat API was successful (status code 200)
+        if response.status_code == 200:
+            # Get the response content (Markdown text)
+            markdown_text = response.text
+            return markdown_text
+        else:
+            return f"Failed to make the request. Status Code: {response.status_code}"
+
+    except Exception as e:
+        return f"An error occurred: {e}"
+    
+=======
+
+>>>>>>> streamlit
 # Streamlit app
 def main():
     st.title("PDF to Text Converter")
@@ -92,6 +125,24 @@ def main():
 
 
     if page =='Nougat':
+<<<<<<< FeatureBranch_Vivek
+        st.subheader('Analyzing PDF using: Nougat')
+
+        if st.button("Convert"):
+            if pdf_url:
+                # Call the conversion function and display the result for Nougat API
+                result = pdf_url_summary_nougat(pdf_url)
+
+                if result:
+                    st.subheader("Nougat API Response:")
+                    st.write(result)
+                else:
+                    st.error("Failed to analyze the PDF using Nougat API.")
+            else:
+                st.warning("Please enter a valid PDF URL.")
+
+
+=======
         st.subheader('Analysing PDF using: Nougat')
         endpoint = st.text_input('Enter the Endpoint', '')
         st.write('The current Endpoint is', endpoint)
@@ -108,5 +159,6 @@ def main():
             else:
                 st.warning("Please enter a valid PDF URL.")
 
+>>>>>>> streamlit
 if __name__ == "__main__":
     main()
