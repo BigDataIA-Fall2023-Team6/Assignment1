@@ -88,8 +88,10 @@ After testing the tool with 5-10 different PDF files from the SEC website, provi
 
 ## Contributors
 
-- Your Name (@yourusername)
-- Additional contributors (if applicable)
+- Abhishek Sand  - 33%
+- Dilip Sharma   - 33%
+- Vivek Hanagoji - 33%
+
 
 ## License
 
