@@ -77,6 +77,8 @@ def pdf_url_summary_nougat(pdf_url):
         # Replace with the ngrok URL provided by ngrok
         ngrok_url = "https://e722-34-125-175-183.ngrok-free.app"  # Replace with your ngrok URL
 
+        #Abhishek's URL: https://ad08-34-29-198-128.ngrok-free.app
+
         # Send the POST request to the Nougat API via ngrok
         response = requests.post(f'{ngrok_url}/predict/', files=files, timeout=500)
 
@@ -142,21 +144,21 @@ def main():
 
 
 
-        st.subheader('Analysing PDF using: Nougat')
-        endpoint = st.text_input('Enter the Endpoint', '')
-        st.write('The current Endpoint is', endpoint)
+        # st.subheader('Analysing PDF using: Nougat')
+        # endpoint = st.text_input('Enter the Endpoint', '')
+        # st.write('The current Endpoint is', endpoint)
 
-        if st.button("Convert"):
-            if pdf_url:
-                # Call the conversion function and display the result
-                text = pdf_url_summary(pdf_url)
-                if text:
-                    st.subheader("Extracted Text:")
-                    st.text(text)
-                else:
-                    st.error("Unable to extract text from the PDF.")
-            else:
-                st.warning("Please enter a valid PDF URL.")
+        # if st.button("Convert"):
+        #     if pdf_url:
+        #         # Call the conversion function and display the result
+        #         text = pdf_url_summary(pdf_url)
+        #         if text:
+        #             st.subheader("Extracted Text:")
+        #             st.text(text)
+        #         else:
+        #             st.error("Unable to extract text from the PDF.")
+        #     else:
+        #         st.warning("Please enter a valid PDF URL.")
 
 
 if __name__ == "__main__":
