@@ -20,8 +20,8 @@ evaluation_parameters: {}
 runtime_configuration: {}
 validations:
   - batch_request:
-      datasource_name: Local_FileSystem_Source4
-      data_asset_name: Origination_Data4
+      datasource_name: Local_FileSystem_Source
+      data_asset_name: Origination_Data
       options:
         path: Origination.csv
       batch_slice:

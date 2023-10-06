@@ -4,6 +4,8 @@ import requests
 from io import BytesIO
 import time
 # from langdetect import detect
+from dotenv import load_dotenv
+
 
 # Function to convert a PDF from a URL to text
 def pdf_url_summary(pdf_url):
@@ -140,25 +142,6 @@ def main():
                     st.error("Failed to analyze the PDF using Nougat API.")
             else:
                 st.warning("Please enter a valid PDF URL.")
-
-
-
-        # st.subheader('Analysing PDF using: Nougat')
-        # endpoint = st.text_input('Enter the Endpoint', '')
-        # st.write('The current Endpoint is', endpoint)
-
-        # if st.button("Convert"):
-        #     if pdf_url:
-        #         # Call the conversion function and display the result
-        #         text = pdf_url_summary(pdf_url)
-        #         if text:
-        #             st.subheader("Extracted Text:")
-        #             st.text(text)
-        #         else:
-        #             st.error("Unable to extract text from the PDF.")
-        #     else:
-        #         st.warning("Please enter a valid PDF URL.")
-
 
 if __name__ == "__main__":
     main()
