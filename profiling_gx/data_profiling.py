@@ -166,11 +166,30 @@ if st.button("Generate Data Summary"):
                     validator.expect_column_values_to_match_regex(column="MORTGAGE INSURANCE PERCENTAGE (MI %)", regex=r'^\\d{3}$')
                     validator.expect_column_values_to_match_regex(column="NUMBER OF UNITS", regex=r'^\\d{2}$')
                     validator.expect_column_values_to_match_regex(column="OCCUPANCY STATUS", regex=r'^[A-Za-z]$')
-
-                    
-
-
-
+                    validator.expect_column_values_to_match_regex(column="ORIGINAL COMBINED LOAN-TO-VALUE (CLTV)", regex=r'^\\d{3}$')
+                    validator.expect_column_values_to_match_regex(column="ORIGINAL DEBT-TO-INCOME (DTI) RATIO", regex=r'^\\d{3}$')
+                    validator.expect_column_values_to_match_regex(column="ORIGINAL UPB", regex=r'^\\d{12}$')
+                    validator.expect_column_values_to_match_regex(column="ORIGINAL LOAN-TO-VALUE (LTV)", regex=r'^\\d{3}$')
+                    validator.expect_column_values_to_match_regex(column="ORIGINAL INTEREST RATE", regex=r'^\d{6}\.\d{3}$')						
+                    validator.expect_column_values_to_match_regex(column="CHANNEL", regex=r'^[A-Za-z]$')
+                    validator.expect_column_values_to_match_regex(column="PREPAYMENT PENALTY MORTGAGE (PPM) FLAG", regex=r'^[A-Za-z]$')
+                    validator.expect_column_values_to_match_regex(column="AMORTIZATION TYPE (FORMERLY PRODUCT TYPE)", regex=r'^[A-Za-z]{5}$')
+                    validator.expect_column_values_to_match_regex(column="PROPERTY STATE", regex=r'^[A-Za-z]{2}$')
+                    validator.expect_column_values_to_match_regex(column="PROPERTY TYPE", regex=r'^[A-Za-z]{2}$')
+                    validator.expect_column_values_to_match_regex(column="POSTAL CODE", regex=r'^\\d{5}$')
+                    validator.expect_column_values_to_match_regex(column="LOAN SEQUENCE NUMBER", regex=r'^[A-Za-z]{1}[A-Za-z]{3}\\d{7}$')
+                    validator.expect_column_values_to_match_regex(column="LOAN PURPOSE", regex=r'^[A-Za-z]$')
+                    validator.expect_column_values_to_match_regex(column="ORIGINAL LOAN TERM", regex=r'^\\d{3}$')
+                    validator.expect_column_values_to_match_regex(column="NUMBER OF BORROWERS", regex=r'^\\d{2}$')
+                    validator.expect_column_values_to_match_regex(column="SELLER NAME", regex=r'^[A-Za-z0-9]{1,60}$')
+                    validator.expect_column_values_to_match_regex(column="SERVICER NAME", regex=r'^[A-Za-z0-9]{1,60}$')
+                    validator.expect_column_values_to_match_regex(column="SUPER CONFORMING FLAG", regex=r'^[A-Za-z]$')
+                    validator.expect_column_values_to_match_regex(column="PRE-HARP LOAN SEQUENCE NUMBER", regex=r'^[A-Za-z]{1}[A-Za-z]{3}\\d{7}$')
+                    validator.expect_column_values_to_match_regex(column="PROGRAM INDICATOR", regex=r'^[A-Za-z0-9]{1}$')
+                    validator.expect_column_values_to_match_regex(column="HARP INDICATOR", regex=r'^[A-Za-z]{1}$')
+                    validator.expect_column_values_to_match_regex(column="PROPERTY VALUATION METHOD", regex=r'^\\d{1}$')
+                    validator.expect_column_values_to_match_regex(column="INTEREST ONLY (I/O) INDICATOR", regex=r'^[A-Za-z]{1}$')
+                    validator.expect_column_values_to_match_regex(column="MORTGAGE INSURANCE CANCELLATION INDICATOR", regex=r'^[A-Za-z]{1}$')
 
 
                     # validator.expect_column_values_to_match_regex(column="MATURITY DATE", regex=r'^\d{6}$')
@@ -308,12 +327,12 @@ if st.button("Generate Data Summary"):
                         validator.expect_column_values_to_not_be_null(column=columny)
 
                     # # Validate "LOAN SEQUENCE NUMBER"
-                    # validator.expect_column_values_to_match_regex(column="LOAN SEQUENCE NUMBER", regex=r'^[A-Z]{1}\d{6}$', mostly=0.95)
+                    validator.expect_column_values_to_match_regex(column="LOAN SEQUENCE NUMBER", regex=r'^[A-Z]{1}\d{6}$')
                     # validator.expect_column_values_to_be_in_set(column="LOAN SEQUENCE NUMBER", value_set=['F', 'A'])
                     # validator.expect_column_length_to_be_between(column="LOAN SEQUENCE NUMBER", min_value=12, max_value=12)
 
                     # # Validate "MONTHLY REPORTING PERIOD"
-                    # validator.expect_column_values_to_match_regex(column="MONTHLY REPORTING PERIOD", regex=r'^\d{6}$', mostly=0.95)
+                    validator.expect_column_values_to_match_regex(column="MONTHLY REPORTING PERIOD", regex=r'^\d{6}$')
                     # validator.expect_column_values_to_be_of_type(column="MONTHLY REPORTING PERIOD", type_="int")
                     # validator.expect_column_length_to_be_between(column="MONTHLY REPORTING PERIOD", min_value=6, max_value=6)
 
