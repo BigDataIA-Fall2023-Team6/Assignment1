@@ -3,8 +3,7 @@ from pypdf import PdfReader, PdfWriter
 import requests
 from io import BytesIO
 import time
-# from langdetect import detect
-from dotenv import load_dotenv
+
 
 
 # Function to convert a PDF from a URL to text
@@ -131,13 +130,18 @@ def main():
 
         if st.button("Convert"):
             if pdf_url:
-                # Call the conversion function and display the result for Nougat API              
+                # Call the conversion function and display the result for Nougat API    
+                
+                start_timen=time.time()          
 
                 result = pdf_url_summary_nougat(pdf_url,ngrok_url)
+                end_timen=time.time()  
 
                 if result:
                     st.subheader("Nougat API Response:")
                     st.write(result)
+                    computationtimen= end_timen-start_timen
+                    st.write ("Computation time (s) for PyReader :", computationtimen)
                 else:
                     st.error("Failed to analyze the PDF using Nougat API.")
             else:
