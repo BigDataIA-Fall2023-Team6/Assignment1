@@ -20,11 +20,12 @@ evaluation_parameters: {}
 runtime_configuration: {}
 validations:
   - batch_request:
-      datasource_name: default_pandas_datasource
-      data_asset_name: '#ephemeral_pandas_asset'
-      options: {}
+      datasource_name: Local_FileSystem_Source4
+      data_asset_name: Origination_Data4
+      options:
+        path: Origination.csv
       batch_slice:
-    expectation_suite_name: default
+    expectation_suite_name: Origination_Data_File_Suite
 profilers: []
 ge_cloud_id:
 expectation_suite_ge_cloud_id:

@@ -62,7 +62,7 @@ def pdf_url_summary(pdf_url):
         return f"An error occurred: {e}"
 # <<<<<<< FeatureBranch_Vivek
     
-def pdf_url_summary_nougat(pdf_url):
+def pdf_url_summary_nougat(pdf_url,ngrok_url):
     try:
         # Download the PDF file from the URL
         response = requests.get(pdf_url)
@@ -75,10 +75,10 @@ def pdf_url_summary_nougat(pdf_url):
         files = {'file': ('uploaded_file.pdf', file_data, 'application/pdf')}
 
         # Replace with the ngrok URL provided by ngrok
-        ngrok_url = "https://e722-34-125-175-183.ngrok-free.app"  # Replace with your ngrok URL
+        ng_url = ngrok_url  # Replace with your ngrok URL
 
         # Send the POST request to the Nougat API via ngrok
-        response = requests.post(f'{ngrok_url}/predict/', files=files, timeout=500)
+        response = requests.post(f'{ng_url}/predict/', files=files, timeout=500)
 
         # Check if the request to the Nougat API was successful (status code 200)
         if response.status_code == 200:
@@ -90,9 +90,6 @@ def pdf_url_summary_nougat(pdf_url):
 
     except Exception as e:
         return f"An error occurred: {e}"
-    
-
-
 
 def main():
     st.title("PDF to Text Converter")
@@ -127,10 +124,14 @@ def main():
 # <<<<<<< FeatureBranch_Vivek
         st.subheader('Analyzing PDF using: Nougat')
 
+        ngrok_url = st.text_input('Enter the ngrok url', '')
+        st.write('The current URL is', ngrok_url)
+
         if st.button("Convert"):
             if pdf_url:
-                # Call the conversion function and display the result for Nougat API
-                result = pdf_url_summary_nougat(pdf_url)
+                # Call the conversion function and display the result for Nougat API              
+
+                result = pdf_url_summary_nougat(pdf_url,ngrok_url)
 
                 if result:
                     st.subheader("Nougat API Response:")
@@ -142,21 +143,21 @@ def main():
 
 
 
-        st.subheader('Analysing PDF using: Nougat')
-        endpoint = st.text_input('Enter the Endpoint', '')
-        st.write('The current Endpoint is', endpoint)
+        # st.subheader('Analysing PDF using: Nougat')
+        # endpoint = st.text_input('Enter the Endpoint', '')
+        # st.write('The current Endpoint is', endpoint)
 
-        if st.button("Convert"):
-            if pdf_url:
-                # Call the conversion function and display the result
-                text = pdf_url_summary(pdf_url)
-                if text:
-                    st.subheader("Extracted Text:")
-                    st.text(text)
-                else:
-                    st.error("Unable to extract text from the PDF.")
-            else:
-                st.warning("Please enter a valid PDF URL.")
+        # if st.button("Convert"):
+        #     if pdf_url:
+        #         # Call the conversion function and display the result
+        #         text = pdf_url_summary(pdf_url)
+        #         if text:
+        #             st.subheader("Extracted Text:")
+        #             st.text(text)
+        #         else:
+        #             st.error("Unable to extract text from the PDF.")
+        #     else:
+        #         st.warning("Please enter a valid PDF URL.")
 
 
 if __name__ == "__main__":
