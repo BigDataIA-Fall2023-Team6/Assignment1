@@ -1,5 +1,12 @@
 # PDF Document Summary Tool & Pandas, Great Expectaions Data Profiling
 
+# Streamlit Applications
+- [PDF Reader](https://pdf-reader-profiling-and-ge-qkgft5tzakzxfbxg6bvthf.streamlit.app/)
+- [GE and Data Profiling](https://profiling-and-ge.streamlit.app/)
+
+PDF Reader: 
+GE and Data Profiling: https://profiling-and-ge.streamlit.app/
+
 ## Codelab
 -[Codelab](https://codelabs-preview.appspot.com/?file_id=1WfSlL-OB7Sc2QXrh8V9PwkwicuQSUq4kcLq5EEJOwYw)
 
